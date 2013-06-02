@@ -1,3 +1,5 @@
+#include <iostream>
+
 #include "pool.h"
 #include "machine.h"
 #include "job.h"
@@ -15,6 +17,8 @@ int main ()
 
     machine_pool.add_job(first_job);
     machine_pool.add_job(second_job);
+
+    std::cout << "Job 1 moveable: " << first_job.moveable() << std::endl;
 
     return 0;
 }

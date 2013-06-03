@@ -2,23 +2,18 @@
 
 #include "job.h"
 
-job::job(int id)
+Job::Job(int id)
+    : job_id(id), state(State::Moveable)
 {
     std::cout << "Created new job: " << id << std::endl;
-    job_id = id;
-    state = MOVEABLE;
 }
 
-int job::get_id()
+int Job::get_id() const
 {
     return job_id;
 }
 
-bool job::moveable()
+bool Job::moveable() const
 {
-    if (state == MOVEABLE) {
-        return true;
-    } else {
-        return false;
-    }
+    return state == State::Moveable;
 }

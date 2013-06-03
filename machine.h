@@ -3,13 +3,13 @@
 
 #include <string>
 
-class machine
+class Machine
 {
-    std::string name;
-
-  public:
-    machine(std::string);
-    std::string get_name();
+    public:
+        Machine(const std::string& machine_name);
+        const std::string& get_name() const;
+    private:
+        std::string name;
 };
 
 #endif /* __MACHINE_H__ */

@@ -3,13 +3,13 @@
 
 #include "machine.h"
 
-machine::machine(std::string machine_name)
+Machine::Machine(const std::string& machine_name)
+    : name(machine_name)
 {
     std::cout << "Creating machine: " << machine_name << std::endl;
-    name = machine_name;
 }
 
-std::string machine::get_name()
+const std::string& Machine::get_name() const
 {
     return name;
 }

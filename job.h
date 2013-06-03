@@ -7,13 +7,13 @@ enum {
     NON_MOVEABLE
 };
 
-class job
+class Job
 {
     int job_id;
     int state;
 
   public:
-    job(int);
+    Job(int);
     int get_id();
     bool moveable();
 };

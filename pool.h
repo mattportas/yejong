@@ -6,14 +6,14 @@
 #include "machine.h"
 #include "job.h"
 
-class pool
+class Pool
 {
-    std::map<std::string, machine> machines;
-    std::map<int, job> jobs;
+    std::map<std::string, Machine> machines;
+    std::map<int, Job> jobs;
 
   public:
-    void add_machine(machine);
-    void add_job(job);
+    void add_machine(Machine);
+    void add_job(Job);
 };
 
 #endif /* __POOL_H__ */

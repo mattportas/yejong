@@ -6,11 +6,11 @@
 
 int main ()
 {
-    pool machine_pool;
-    machine first_machine("one");
-    machine second_machine("two");
-    job first_job(1);
-    job second_job(2);
+    Pool machine_pool;
+    Machine first_machine("one");
+    Machine second_machine("two");
+    Job first_job(1);
+    Job second_job(2);
 
     machine_pool.add_machine(first_machine);
     machine_pool.add_machine(second_machine);

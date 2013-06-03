@@ -3,12 +3,12 @@
 
 #include <string>
 
-class machine
+class Machine
 {
     std::string name;
 
   public:
-    machine(std::string);
+    Machine(std::string);
     std::string get_name();
 };
 

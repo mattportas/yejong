@@ -8,12 +8,13 @@
 
 class Pool
 {
-    std::map<std::string, Machine> machines;
-    std::map<int, Job> jobs;
+    public:
+        void add_machine(const Machine& new_machine);
+        void add_job(const Job& new_job);
 
-  public:
-    void add_machine(Machine);
-    void add_job(Job);
+    private:
+        std::map<std::string, Machine> machines;
+        std::map<int, Job> jobs;
 };
 
 #endif /* __POOL_H__ */

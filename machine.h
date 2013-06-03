@@ -2,6 +2,9 @@
 #define __MACHINE_H__
 
 #include <string>
+#include <vector>
+
+#include "job.h"
 
 class Machine
 {
@@ -10,6 +13,7 @@ class Machine
         const std::string& get_name() const;
     private:
         std::string name;
+        std::vector<Job> jobs;
 };
 
 #endif /* __MACHINE_H__ */

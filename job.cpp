@@ -14,6 +14,11 @@ int Job::get_id() const
     return job_id;
 }
 
+const std::string& Job::get_machine() const
+{
+    return machine;
+}
+
 bool Job::moveable() const
 {
     return state == State::Moveable;

@@ -15,6 +15,7 @@ class Job
         Job(int id, std::string machine_name);
 
         int get_id() const;
+        const std::string& get_machine() const;
         bool moveable() const;
 
     private:

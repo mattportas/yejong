@@ -1,6 +1,8 @@
 #ifndef __JOB_H__
 #define __JOB_H__
 
+#include <string>
+
 class Job
 {
     public:
@@ -10,13 +12,14 @@ class Job
             NonMoveable
         };
 
-        Job(int id);
+        Job(int id, std::string machine_name);
 
         int get_id() const;
         bool moveable() const;
 
     private:
         int job_id;
+        std::string machine;
         State state;
 };
 

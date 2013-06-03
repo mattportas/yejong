@@ -1,9 +1,10 @@
 #include <iostream>
+#include <string>
 
 #include "job.h"
 
-Job::Job(int id)
-    : job_id(id), state(State::Moveable)
+Job::Job(int id, std::string machine_name)
+    : job_id(id), state(State::Moveable), machine(machine_name)
 {
     std::cout << "Created new job: " << id << std::endl;
 }

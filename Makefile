@@ -1,18 +1,10 @@
-schedule: pool.o job.o machine.o schedule.o
-	clang++ -o schedule pool.o job.o machine.o schedule.o
+CXX=clang++
+CXXFLAGS=-O2 -Wall -Wextra -std=c++11 
 
-pool.o:
-	clang++ -c pool.cpp
+OBJECTS:=$(patsubst %.cpp,%.o,$(wildcard *.cpp))
 
-job.o:
-	clang++ -c job.cpp
-
-machine.o:
-	clang++ -c machine.cpp
-
-schedule.o:
-	clang++ -c schedule.cpp
-
+all: $(OBJECTS)
+	$(CXX) $(CXXFLAGS) -o schedule $(OBJECTS)
 
 clean:
-	rm pool.o job.o machine.o schedule.o schedule
+	rm -f $(OBJECTS) schedule

@@ -7,10 +7,11 @@
 int main ()
 {
     Pool machine_pool;
-    Job first_job(1, "one");
 
     machine_pool.add_machine(Machine("one"));
     machine_pool.add_machine(Machine("two"));
+
+    Job first_job(1, "one");
 
     machine_pool.add_job(first_job);
     machine_pool.add_job(Job(2, "two"));

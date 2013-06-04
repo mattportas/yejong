@@ -3,7 +3,7 @@
 
 #include "job.h"
 
-Job::Job(int id, std::string machine_name)
+Job::Job(int id, const std::string& machine_name)
     : job_id(id), state(State::Moveable), machine(machine_name)
 {
     std::cout << "Created new job: " << id << std::endl;

@@ -14,7 +14,7 @@ const std::string& Machine::get_name() const
     return name;
 }
 
-void Machine::add_job(Job new_job)
+void Machine::add_job(const Job& new_job)
 {
     jobs.push_back(new_job);
 }

@@ -16,12 +16,11 @@ void Pool::add_job(const Job& new_job)
 {
     const int job_id = new_job.get_id();
     const std::string& machine_name = new_job.get_machine();
-    std::map<std::string, Machine>::iterator iter;
 
     std::cout << "Adding job to pool: " << job_id << " (" << machine_name << ")" << std::endl;
     jobs.insert(std::make_pair(job_id, new_job));
 
-    iter = machines.find(machine_name);
+    std::map<std::string, Machine>::iterator iter = machines.find(machine_name);
     if (iter != machines.end()) {
         std::cout << "Adding job to machine: " << machine_name << std::endl;
         iter->second.add_job(new_job);

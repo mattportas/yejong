@@ -20,7 +20,7 @@ void Pool::add_job(const Job& new_job)
     std::cout << "Adding job to pool: " << job_id << " (" << machine_name << ")" << std::endl;
     jobs.insert(std::make_pair(job_id, new_job));
 
-    std::map<std::string, Machine>::iterator iter = machines.find(machine_name);
+    auto iter = machines.find(machine_name);
     if (iter != machines.end()) {
         std::cout << "Adding job to machine: " << machine_name << std::endl;
         iter->second.add_job(new_job);

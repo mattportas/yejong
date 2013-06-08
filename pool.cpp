@@ -1,4 +1,5 @@
 #include <iostream>
+#include <memory>
 #include <string>
 #include <utility>
 
@@ -12,10 +13,10 @@ void Pool::add_machine(const Machine& new_machine)
     machines.insert(std::make_pair(machine_name, new_machine));
 }
 
-void Pool::add_job(const Job& new_job)
+void Pool::add_job(std::shared_ptr<Job> new_job)
 {
-    const int job_id = new_job.get_id();
-    const std::string& machine_name = new_job.get_machine();
+    const int job_id = new_job->get_id();
+    const std::string& machine_name = new_job->get_machine();
 
     std::cout << "Adding job to pool: " << job_id << " (" << machine_name << ")" << std::endl;
     jobs.insert(std::make_pair(job_id, new_job));

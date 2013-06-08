@@ -1,4 +1,5 @@
 #include <iostream>
+#include <memory>
 
 #include "pool.h"
 #include "machine.h"
@@ -11,12 +12,11 @@ int main ()
     machine_pool.add_machine(Machine("one"));
     machine_pool.add_machine(Machine("two"));
 
-    Job first_job(1, "one");
+    std::shared_ptr<Job> job_one(new Job(1, "one"));
+    std::shared_ptr<Job> job_two(new Job(2, "two"));
 
-    machine_pool.add_job(first_job);
-    machine_pool.add_job(Job(2, "two"));
-
-    std::cout << "Job 1 moveable: " << first_job.moveable() << std::endl;
+    machine_pool.add_job(job_one);
+    machine_pool.add_job(job_two);
 
     return 0;
 }

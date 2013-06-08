@@ -1,4 +1,5 @@
 #include <iostream>
+#include <memory>
 #include <string>
 
 #include "machine.h"
@@ -14,7 +15,7 @@ const std::string& Machine::get_name() const
     return name;
 }
 
-void Machine::add_job(const Job& new_job)
+void Machine::add_job(std::shared_ptr<Job> new_job)
 {
     jobs.push_back(new_job);
 }

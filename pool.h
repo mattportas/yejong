@@ -10,11 +10,11 @@
 class Pool
 {
     public:
-        void add_machine(const Machine& new_machine);
+        void add_machine(std::shared_ptr<Machine> new_machine);
         void add_job(std::shared_ptr<Job> new_job);
 
     private:
-        std::map<std::string, Machine> machines;
+        std::map<std::string, std::shared_ptr<Machine>> machines;
         std::map<int, std::shared_ptr<Job>> jobs;
 };
 

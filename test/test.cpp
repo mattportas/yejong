@@ -3,30 +3,24 @@
 #include "test-machine.h"
 
 #include <iostream>
+#include <memory>
 
 int main()
 {
     Test::TestSuite tests(std::cout);
     
-    { // Job
-        std::shared_ptr<Test::Test> jt1(new Test::JobID);
-        tests.register_test(jt1);
-        std::shared_ptr<Test::Test> jt2(new Test::JobMachineName);
-        tests.register_test(jt2);
-        std::shared_ptr<Test::Test> jt3(new Test::JobDefaultState);
-        tests.register_test(jt3);
-    }
+    // Set up tests - class Job
+    tests.register_test(std::make_shared<Test::JobID>());
+    tests.register_test(std::make_shared<Test::JobMachineName>());
+    tests.register_test(std::make_shared<Test::JobDefaultState>());
 
-    { // Machine
-        std::shared_ptr<Test::Test> mt1(new Test::MachineName);
-        tests.register_test(mt1);
-        std::shared_ptr<Test::Test> mt2(new Test::MachineAddJob);
-        tests.register_test(mt2);
-    }
+    // Set up tests - class Machine
+    tests.register_test(std::make_shared<Test::MachineName>());
+    tests.register_test(std::make_shared<Test::MachineAddJob>());
 
-    { // Pool
-    }
-
+    // Set up tests - class Pool
+    
+    // Run the tests
     bool all_ok = tests.run_all();
     if (all_ok)
         return 0;

@@ -1,6 +1,7 @@
 #include "test.h"
 #include "test-job.h"
 #include "test-machine.h"
+#include "test-pool.h"
 
 #include <iostream>
 #include <memory>
@@ -19,6 +20,8 @@ int main()
     tests.register_test(std::make_shared<Test::MachineAddJob>());
 
     // Set up tests - class Pool
+    tests.register_test(std::make_shared<Test::PoolAddMachine>());
+    tests.register_test(std::make_shared<Test::PoolAddJob>());
     
     // Run the tests
     bool all_ok = tests.run_all();

@@ -1,5 +1,6 @@
 #include "test.h"
 #include "test-job.h"
+#include "test-machine.h"
 
 #include <iostream>
 
@@ -16,7 +17,11 @@ int main()
         tests.register_test(jt3);
     }
 
-    { // Machine 
+    { // Machine
+        std::shared_ptr<Test::Test> mt1(new Test::MachineName);
+        tests.register_test(mt1);
+        std::shared_ptr<Test::Test> mt2(new Test::MachineAddJob);
+        tests.register_test(mt2);
     }
 
     { // Pool

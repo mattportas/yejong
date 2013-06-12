@@ -1,4 +1,4 @@
-OBJ_DEPENDENCIES := ../job.o
+OBJ_DEPENDENCIES := ../job.o ../machine.o
 TEST_OBJECTS := $(patsubst %.cpp,%.o,$(wildcard test-*.cpp))
 TEST_MAIN_OBJECT := test.o testsuite.o
 
